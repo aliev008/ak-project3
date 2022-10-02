@@ -1,4 +1,4 @@
-import { closeModal, showModal } from "./index";
+import { closeModal, showModal } from "../utils/index"
 
 export const modals = () => {
   const bindModal = ({
@@ -57,13 +57,11 @@ export const modals = () => {
     setTimeout(() => {
       let display;
       document.querySelectorAll("[data-modal]").forEach((item) => {
-        console.log(`item`, item);
         if (getComputedStyle(item).display !== "none") {
           display = "block";
         }
       });
       if (!display) {
-        console.log(`display`, display);
         showModal(document.querySelector(selector));
       }
     }, time);
