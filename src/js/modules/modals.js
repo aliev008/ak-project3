@@ -22,14 +22,13 @@ export const modals = () => {
 
         btnPressed = true;
 
-        if (destroy) {
-          trigger.remove();
-        }
-
         windows.forEach((window) => {
           closeModal(window);
         });
         showModal(modal);
+        if (destroy) {
+          trigger.remove();
+        }
       });
     });
 
