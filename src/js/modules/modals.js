@@ -102,6 +102,8 @@ export const modals = () => {
     destroy: true,
   });
 
+  // netlify
+
   showModalByTime(".popup-consultation", 10000);
   openByScroll(".fixed-gift");
 };
