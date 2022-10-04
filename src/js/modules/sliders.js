@@ -44,16 +44,16 @@ export const sliders = ({ slides, direction, prev, next }) => {
   } catch (e) {}
 
   const activateAnimation = () => {
-    direction === "vertical"
-      ? (paused = setInterval(() => {
+    paused = direction === "vertical"
+      ? setInterval(() => {
           changeSlides(1);
           items[slideIndex - 1].classList.add("slideInDown");
-        }, 5000))
-      : (paused = setInterval(() => {
+        }, 5000)
+      : setInterval(() => {
           changeSlides(1);
           items[slideIndex - 1].classList.remove("slideInRight");
           items[slideIndex - 1].classList.add("slideInLeft");
-        }, 5000));
+        }, 5000);
   };
 
   activateAnimation();
