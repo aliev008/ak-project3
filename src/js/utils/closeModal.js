@@ -6,7 +6,10 @@ export const closeModal = (modal) => {
   }
   document.body.style.overflow = "";
   document.body.style.marginRight = `0px`;
-  document.querySelector(".fixed-gift").style.marginRight = `0px`;
+
+  if (document.querySelector(".fixed-gift")) {
+    document.querySelector(".fixed-gift").style.marginRight = `0px`;
+  }
 };
 
 export const closeModalByKeydown = (event, modal) => {
