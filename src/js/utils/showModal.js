@@ -21,8 +21,6 @@ function calcScroll() {
   div.style.visiibility = "hidden";
 
   document.body.append(div);
-  console.log(`div.offsetWidth`, div.offsetWidth);
-  console.log(`div.clientWidth`, div.clientWidth);
   const scrollWidth = div.offsetWidth - div.clientWidth;
   div.remove();
 
