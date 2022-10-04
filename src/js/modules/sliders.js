@@ -44,18 +44,16 @@ export const sliders = ({ slides, direction, prev, next }) => {
   } catch (e) {}
 
   const activateAnimation = () => {
-    if (direction === "vertical") {
-      paused = setInterval(() => {
-        changeSlides(1);
-        items[slideIndex - 1].classList.add("slideInDown");
-      }, 5000);
-    } else {
-      paused = setInterval(() => {
-        changeSlides(1);
-        items[slideIndex - 1].classList.remove("slideInRight");
-        items[slideIndex - 1].classList.add("slideInLeft");
-      }, 5000);
-    }
+    direction === "vertical"
+      ? (paused = setInterval(() => {
+          changeSlides(1);
+          items[slideIndex - 1].classList.add("slideInDown");
+        }, 5000))
+      : (paused = setInterval(() => {
+          changeSlides(1);
+          items[slideIndex - 1].classList.remove("slideInRight");
+          items[slideIndex - 1].classList.add("slideInLeft");
+        }, 5000));
   };
 
   activateAnimation();
