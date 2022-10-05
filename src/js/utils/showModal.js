@@ -7,7 +7,10 @@ export const showModal = (modal) => {
   modal.style.display = "block";
   document.body.style.overflow = "hidden";
   document.body.style.marginRight = `${scroll}px`;
-  document.querySelector(".fixed-gift").style.marginRight = `${scroll}px`;
+
+  if (document.querySelector(".fixed-gift")) {
+    document.querySelector(".fixed-gift").style.marginRight = `${scroll}px`;
+  }
 
   document.addEventListener("keydown", (e) => closeModalByKeydown(e, modal));
 };
