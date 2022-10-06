@@ -1,6 +1,4 @@
-import { forms } from "./modules/forms";
-import { modals } from "./modules/modals";
-import { sliders } from "./modules/sliders"; 
+import { forms, modals, sliders} from "./modules/index"; 
 
 window.addEventListener("DOMContentLoaded", () => {
   "use strict";
