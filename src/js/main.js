@@ -1,5 +1,6 @@
+import { forms } from "./modules/forms";
 import { modals } from "./modules/modals";
-import { sliders } from "./modules/sliders";
+import { sliders } from "./modules/sliders"; 
 
 window.addEventListener("DOMContentLoaded", () => {
   "use strict";
@@ -14,4 +15,5 @@ window.addEventListener("DOMContentLoaded", () => {
     slides: ".main-slider-item",
     direction: "vertical",
   });
+  forms();
 });
