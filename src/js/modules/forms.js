@@ -19,12 +19,16 @@ export const forms = () => {
   };
 
   const postData = async (url, data) => {
-    let res = await fetch(url, {
-      method: "POST",
-      body: data,
-    });
+    try {
+      const res = await fetch(url, {
+        method: "POST",
+        body: data,
+      });
 
-    return await res.text();
+      return await res.text();
+    } catch (error) {
+      console.log({ error });
+    }
   };
 
   const clearInputs = () => {
@@ -55,7 +59,7 @@ export const forms = () => {
     form.addEventListener("submit", (e) => {
       e.preventDefault();
 
-      let statusMessage = document.createElement("div");
+      const statusMessage = document.createElement("div");
       statusMessage.classList.add("status");
       form.parentNode.append(statusMessage);
 
@@ -65,7 +69,7 @@ export const forms = () => {
         form.style.display = "none";
       }, 400);
 
-      let statusImg = document.createElement("img");
+      const statusImg = document.createElement("img");
       statusImg.setAttribute("src", message.spinner);
       statusImg.classList.add("animated", "fadeInUp");
       statusMessage.append(statusImg);
