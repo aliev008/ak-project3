@@ -1,4 +1,5 @@
-import { forms, modals, sliders} from "./modules/index"; 
+import { forms, modals, sliders, mask} from "./modules/index"; 
+import { checkTextInputs } from "./utils/index"; 
 
 window.addEventListener("DOMContentLoaded", () => {
   "use strict";
@@ -14,4 +15,7 @@ window.addEventListener("DOMContentLoaded", () => {
     direction: "vertical",
   });
   forms();
+  mask('[name="phone"]');
+  checkTextInputs('[name="name"]');
+  checkTextInputs('[name="message"]');
 });
