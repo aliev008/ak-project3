@@ -423,6 +423,11 @@ h4 {
   right: 0;
 }
 
+.input-inactive:-internal-autofill-selected {
+  background: red !important;
+  background-color: red !important;
+}
+
 .status {
   text-align: center;
 }

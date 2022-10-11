@@ -47,5 +47,6 @@ export const mask = (selector) => {
     input.addEventListener("input", createMask);
     input.addEventListener("focus", createMask);
     input.addEventListener("blur", createMask);
+    input.addEventListener
   });
 };
