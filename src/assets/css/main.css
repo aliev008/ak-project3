@@ -423,9 +423,8 @@ h4 {
   right: 0;
 }
 
-.input-inactive:-internal-autofill-selected {
-  background: red !important;
-  background-color: red !important;
+input:-webkit-autofill, input:-webkit-autofill:focus {
+  box-shadow: 0 0 0 1000px rgb(255, 255, 255) inset;
 }
 
 .status {

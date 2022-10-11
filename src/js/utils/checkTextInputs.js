@@ -11,10 +11,6 @@ export const checkTextInputs = (selector) => {
     input.addEventListener("change", (e) => {
       if (e.target.value.match(/[^а-яё 0-9]/gi)) {
         e.target.value = "";
-        input.classList.add('input-inactive');
-        // var style = document.createElement('style');
-        // style.innerHTML = ".input-inactive:autofill {background-color: blue !important};"
-        // document.head.appendChild(style);
       }
     });
   });
