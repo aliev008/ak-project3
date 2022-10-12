@@ -1,5 +1,5 @@
-export const showMoreStyles = (trigger, styles) => {
-  const cards = document.querySelectorAll(styles),
+export const showMoreStyles = (trigger, cardsSelector) => {
+  const cards = document.querySelectorAll(cardsSelector),
     btn = document.querySelector(trigger);
   cards.forEach((card) => {
     card.classList.add("animated", "fadeInUp");
