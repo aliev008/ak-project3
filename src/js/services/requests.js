@@ -6,7 +6,6 @@ const postData = async (url, data) => {
     });
     return await res.text();
   } catch (error) {
-    console.log({ error });
   }
 };
 
