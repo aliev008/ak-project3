@@ -1,10 +1,13 @@
 import { postData } from "../services/requests";
+import { resetState } from "../utils";
 
-export const forms = () => {
+export const forms = (state) => {
   const pageForms = document.querySelectorAll("form"),
     inputs = document.querySelectorAll("input"),
     checkboxInputs = document.querySelectorAll(".checkbox"),
-    uploads = document.querySelectorAll('[name="upload"]');
+    selectInputs = document.querySelectorAll('select'),
+    uploads = document.querySelectorAll('[name="upload"]'),
+    resultBlock = document.querySelector('.calc-price'); 
 
   const message = {
     loading: "Загрузка...",
@@ -31,6 +34,8 @@ export const forms = () => {
     uploads.forEach((upload) => {
       upload.previousElementSibling.textContent = "Файл не выбран";
     });
+    selectInputs.forEach((select) => select.selectedIndex = 0);
+    resultBlock.textContent = 'Пожауйста, выберите размер и материал картины';
   };
 
   uploads.forEach((upload) => {
@@ -69,6 +74,15 @@ export const forms = () => {
 
       const formData = new FormData(form);
 
+      console.log(`before state`, formData);
+      console.log({state});
+      if (form.getAttribute("data-calc") === "end") {
+        for (let key in state) {
+          formData.append(key, state[key]);
+        }
+      }
+      console.log(`after state`, formData);
+
       let api =
         form.closest(".popup-design") || form.classList.contains("calc_form")
           ? paths.designer
@@ -76,6 +90,7 @@ export const forms = () => {
 
       postData(api, formData)
         .then((result) => {
+          console.log({result});
           statusImg.setAttribute("src", message.ok);
           textMessage.textContent = message.success;
         })
@@ -89,6 +104,7 @@ export const forms = () => {
             form.style.display = "block";
             form.classList.remove("fadeOutUp");
             form.classList.add("fadeInUp");
+            resetState(state);
             clearInputs();
           }, 5000);
         });

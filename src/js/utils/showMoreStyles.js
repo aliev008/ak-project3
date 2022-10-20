@@ -5,7 +5,7 @@ export const showMoreStyles = (trigger, wrapper) => {
 
   btn.addEventListener("click", function (e) {
     // getData("http://localhost:3000/styles")
-    getData("../assets/db.json")
+    getData("./assets/db.json")
       .then((res) => {
         createCards(res.styles);
         Object.keys(res).length !== 0 && this.remove();
