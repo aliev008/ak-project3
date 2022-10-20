@@ -7,7 +7,7 @@ export const forms = (state) => {
     checkboxInputs = document.querySelectorAll(".checkbox"),
     selectInputs = document.querySelectorAll('select'),
     uploads = document.querySelectorAll('[name="upload"]'),
-    resultBlock = document.querySelector('.calc-price'); 
+    calcResultBlock = document.querySelector('.calc-price'); 
 
   const message = {
     loading: "Загрузка...",
@@ -35,14 +35,14 @@ export const forms = (state) => {
       upload.previousElementSibling.textContent = "Файл не выбран";
     });
     selectInputs.forEach((select) => select.selectedIndex = 0);
-    resultBlock.textContent = 'Пожауйста, выберите размер и материал картины';
+    calcResultBlock.textContent = 'Пожауйста, выберите размер и материал картины';
   };
 
   uploads.forEach((upload) => {
     upload.addEventListener("input", () => {
       const fileFullName = upload.files[0].name.split(".");
       const fileName = fileFullName[0],
-        fileType = fileFullName[1];
+            fileType = fileFullName[1];
       const dots = fileName.length > 6 ? "..." : ".";
       upload.previousElementSibling.textContent =
         fileName.substring(0, 6) + dots + fileType;
@@ -74,14 +74,11 @@ export const forms = (state) => {
 
       const formData = new FormData(form);
 
-      console.log(`before state`, formData);
-      console.log({state});
       if (form.getAttribute("data-calc") === "end") {
         for (let key in state) {
           formData.append(key, state[key]);
         }
       }
-      console.log(`after state`, formData);
 
       let api =
         form.closest(".popup-design") || form.classList.contains("calc_form")
