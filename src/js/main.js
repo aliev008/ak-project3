@@ -1,4 +1,4 @@
-import { forms, modals, sliders, mask, calc } from "./modules/index";
+import { forms, modals, sliders, mask, calc, filter} from "./modules/index";
 import { checkTextInputs, showMoreStyles, changeModalState, getCalcValues } from "./utils/index";
 
 window.addEventListener("DOMContentLoaded", async () => {
@@ -29,4 +29,5 @@ window.addEventListener("DOMContentLoaded", async () => {
     result: ".calc-price",
   });
   changeModalState(state);
+  filter();
 });
