@@ -13,5 +13,5 @@ export const getCalcValues = async (selector) => {
     console.log(error);
   }
 
-  return await result;
+  return result;
 };
