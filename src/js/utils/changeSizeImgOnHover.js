@@ -6,7 +6,7 @@ export const changeSizeImgOnHover = () => {
       imgSrc = imgElem.src,
       [imgPath, imgType] = imgSrc.split(".");
 
-    const newImgSrc = imgPath + "-1." + imgType;
+    const newImgSrc = `${imgPath}-1.${imgType}`;
 
     window.addEventListener("mouseover", () => {
       imgElem.src = newImgSrc;
