@@ -24,6 +24,7 @@ export const filter = () => {
 
         // Getting type name
         const selectedType = target.classList.value;
+        const selectedTypeExamples = wrapper.querySelectorAll(`.${selectedType}`);
         target.classList.add("active");
 
         typeAll.forEach((item) => {
@@ -31,9 +32,8 @@ export const filter = () => {
           item.style.display = "none";
         });
 
-        // Showing data for selected type
-        if ([...wrapper.querySelectorAll(`.${selectedType}`)].length > 0) {
-          wrapper.querySelectorAll(`.${selectedType}`).forEach((item) => {
+        if (selectedTypeExamples.length) {
+          selectedTypeExamples.forEach((item) => {
             item.style.display = "block";
           });
         } else {
