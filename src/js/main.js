@@ -1,5 +1,5 @@
 import { forms, modals, sliders, mask, calc, filter} from "./modules/index";
-import { checkTextInputs, showMoreStyles, changeModalState, getCalcValues } from "./utils/index";
+import { checkTextInputs, showMoreStyles, changeModalState, changeSizeImgOnHover } from "./utils/index";
 
 window.addEventListener("DOMContentLoaded", async () => {
   "use strict";
@@ -30,4 +30,5 @@ window.addEventListener("DOMContentLoaded", async () => {
   });
   changeModalState(state);
   filter();
+  changeSizeImgOnHover();
 });

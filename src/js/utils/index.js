@@ -6,3 +6,4 @@ export { resetState } from "./resetState";
 export { showModal } from "./showModal";
 export { showMoreStyles } from "./showMoreStyles";
 export { getCalcValues } from "./getCalcValues";
+export { changeSizeImgOnHover } from "./changeSizeImgOnHover";
