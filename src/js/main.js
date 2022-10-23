@@ -1,4 +1,4 @@
-import { forms, modals, sliders, mask, calc, filter} from "./modules/index";
+import { forms, modals, sliders, mask, calc, filter, accordion} from "./modules/index";
 import { checkTextInputs, showMoreStyles, changeModalState, changeSizeImgOnHover } from "./utils/index";
 
 window.addEventListener("DOMContentLoaded", async () => {
@@ -31,4 +31,5 @@ window.addEventListener("DOMContentLoaded", async () => {
   changeModalState(state);
   filter();
   changeSizeImgOnHover();
+  accordion();
 });
