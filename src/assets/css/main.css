@@ -912,10 +912,23 @@ input:-webkit-autofill, input:-webkit-autofill:focus {
   border-bottom: 2px dotted #333;
 }
 .often-questions .accordion-block {
-  margin-top: 1rem;
-  background-color: #f7e7e6;
-  padding: 3rem 4rem;
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: all 0.3s ease-out;
 }
+.often-questions .accordion-block.active {
+  opacity: 1;
+  overflow: visible;
+  margin-top: 4rem; 
+  background-color: #f7e7e6; 
+  padding: 3rem 4rem; 
+}
+
+.often-questions .accordion-heading:focus-visible {
+  outline: 2px solid #c51abb;
+}
+
 .often-questions .accordion-block:before {
   content: '';
   position: absolute;
