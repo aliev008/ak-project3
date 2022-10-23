@@ -7,12 +7,16 @@ export const accordion = () => {
 
     if (question.classList.contains("ui-accordion-header-active")) {
       answer.classList.add("active");
-      answer.style.maxHeight = `${answer.scrollHeight + 80}px`;
+      answer.style.setProperty("--max-height", `${answer.scrollHeight + 80}px`);
     } else {
       answer.classList.remove("active");
-      answer.style.maxHeight = "0px";
+      answer.style.setProperty("--max-height", `0px`);
     }
   };
+
+  answers.forEach((answer) => {
+    answer.style.setProperty("--max-height", `0px`);
+  });
 
   questions.forEach((question, index) => {
     const answer = answers[index];

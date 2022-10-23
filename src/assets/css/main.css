@@ -912,10 +912,10 @@ input:-webkit-autofill, input:-webkit-autofill:focus {
   border-bottom: 2px dotted #333;
 }
 .often-questions .accordion-block {
-  max-height: 0;
+  max-height: var(--max-height);
   opacity: 0;
   overflow: hidden;
-  transition: all 0.3s ease-out;
+  transition: all 0.5s ease-out;
 }
 .often-questions .accordion-block.active {
   opacity: 1;
