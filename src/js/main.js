@@ -1,4 +1,4 @@
-import { forms, modals, sliders, mask, calc, filter, accordion} from "./modules/index";
+import { forms, modals, sliders, mask, calc, filter, accordion, burger} from "./modules/index";
 import { checkTextInputs, showMoreStyles, changeModalState, changeSizeImgOnHover } from "./utils/index";
 
 window.addEventListener("DOMContentLoaded", async () => {
@@ -32,4 +32,5 @@ window.addEventListener("DOMContentLoaded", async () => {
   filter();
   changeSizeImgOnHover();
   accordion();
+  burger('.header .burger', '.header .burger-menu');
 });
