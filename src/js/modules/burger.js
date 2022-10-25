@@ -1,9 +1,10 @@
 export const burger = (triggerSelector, menuSelector) => {
   const burgerIcon = document.querySelector(triggerSelector),
-        burgerMenu = document.querySelector(menuSelector);
+        burgerMenu = document.querySelector(menuSelector),
+        screen= window.screen;
 
   burgerIcon.addEventListener("click", () => {
-    if (window.screen.availWidth < 993) {
+    if (screen.availWidth < 993) {
       burgerMenu.classList.add("animated", "fadeIn");
       burgerMenu.style.display === "none"
         ? (burgerMenu.style.display = "block")
@@ -12,7 +13,7 @@ export const burger = (triggerSelector, menuSelector) => {
   });
 
   window.addEventListener("resize", () => {
-    if (window.screen.availWidth > 992) {
+    if (screen.availWidth > 992) {
       burgerMenu.style.display = "none";
       burgerMenu.classList.remove("active");
     }

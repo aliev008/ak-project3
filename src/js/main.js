@@ -1,5 +1,5 @@
-import { forms, modals, sliders, mask, calc, filter, accordion, burger} from "./modules/index";
-import { checkTextInputs, showMoreStyles, changeModalState, changeSizeImgOnHover } from "./utils/index";
+import { forms, modals, sliders, mask, calc, filter, accordion, burger} from "./modules";
+import { checkTextInputs, showMoreStyles, changeModalState, changeSizeImgOnHover } from "./utils";
 
 window.addEventListener("DOMContentLoaded", async () => {
   "use strict";
