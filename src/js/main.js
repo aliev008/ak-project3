@@ -1,5 +1,22 @@
-import { forms, modals, sliders, mask, calc, filter, accordion, burger} from "./modules";
-import { checkTextInputs, showMoreStyles, changeModalState, changeSizeImgOnHover, showOnScroll, smoothScrollToAncor } from "./utils";
+import {
+  forms,
+  modals,
+  sliders,
+  mask,
+  calc,
+  filter,
+  accordion,
+  burger,
+} from "./modules";
+import {
+  checkTextInputs,
+  showMoreStyles,
+  changeModalState,
+  changeSizeImgOnHover,
+  showOnScroll,
+  smoothScrollToAncor,
+  dragAndDrop,
+} from "./utils";
 
 window.addEventListener("DOMContentLoaded", async () => {
   "use strict";
@@ -32,7 +49,8 @@ window.addEventListener("DOMContentLoaded", async () => {
   filter();
   changeSizeImgOnHover();
   accordion();
-  burger('.header .burger', '.header .burger-menu');
-  showOnScroll('.pageup');
+  burger(".header .burger", ".header .burger-menu");
+  showOnScroll(".pageup");
   smoothScrollToAncor();
+  dragAndDrop();
 });

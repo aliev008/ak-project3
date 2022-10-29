@@ -9,3 +9,5 @@ export { getCalcValues } from "./getCalcValues";
 export { changeSizeImgOnHover } from "./changeSizeImgOnHover";
 export { showOnScroll } from "./showOnScroll";
 export { smoothScrollToAncor } from "./smoothScrollToAncor";
+export { dragAndDrop } from "./dragAdnDrop";
+export { setUploadedFileName } from "./setUploadedFileName";

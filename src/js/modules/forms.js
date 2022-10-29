@@ -1,5 +1,5 @@
 import { postData } from "../services/requests";
-import { resetState } from "../utils";
+import { resetState, setUploadedFileName } from "../utils";
 
 export const forms = (state) => {
   const pageForms = document.querySelectorAll("form"),
@@ -40,12 +40,7 @@ export const forms = (state) => {
 
   uploads.forEach((upload) => {
     upload.addEventListener("input", () => {
-      const fileFullName = upload.files[0].name.split(".");
-      const fileName = fileFullName[0],
-            fileType = fileFullName[1];
-      const dots = fileName.length > 6 ? "..." : ".";
-      upload.previousElementSibling.textContent =
-        fileName.substring(0, 6) + dots + fileType;
+        setUploadedFileName(upload);
     });
   });
 
