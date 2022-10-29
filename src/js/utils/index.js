@@ -8,4 +8,4 @@ export { showMoreStyles } from "./showMoreStyles";
 export { getCalcValues } from "./getCalcValues";
 export { changeSizeImgOnHover } from "./changeSizeImgOnHover";
 export { showOnScroll } from "./showOnScroll";
-export { smoothScroll } from "./smoothScroll";
+export { smoothScrollToAncor } from "./smoothScrollToAncor";
